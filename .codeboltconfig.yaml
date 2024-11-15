@@ -1,0 +1,59 @@
+appName: Nextjs Template
+appUniqueId: 
+appInfo:
+  description: This is a nextjs template.
+  appVersion: 1.0.0
+  appRepoUrl: 
+  appIconUrl: 
+  appAuthorUserId: 
+  forkedFrom: 
+technicalInfo:
+  supportedLanguages:
+    - typescript
+  supportedFrameworks:
+    - react
+  services:
+    - node:20+
+    - python:2.13+
+    - redis:any
+  knowledgebases:
+    - url: docs.test.com
+      vectordbId: adsfasdfasd
+      name: TestDocs
+      type: url
+    - url: asdfi/co/file
+      vectordbId: asdfaga
+      name: sampledoc
+      type: doc
+  instruction:
+    - text: adsfadsfasdf
+    - localfile:
+        path: ./instruction.md
+usage:
+  develop:
+    run:
+      - shell:
+          command: npm run dev
+    agents:
+      - codebolt_dev
+    laynut: dev  
+  install: 
+    steps:
+      - instruction:
+          AIinstruction: Create this app 
+      - command:
+          type: shell
+          description: This installs the Npm
+          command: npm install 
+    customInstallationAgent:
+          enabled: true
+          agent: codebolt_dev        
+  appUse:
+    prerunsteps:
+      - shell:
+          command: npm run start
+    agents:
+      - codebol_sildes_generator
+    layout: basic
+    appPreview:
+      type: web
